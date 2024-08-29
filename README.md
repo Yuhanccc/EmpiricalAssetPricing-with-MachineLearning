@@ -26,7 +26,9 @@ The project consists of the following main components:
 
 ## Installation
 To use this system, clone the repository and install the required dependencies:
-bash
+'''
 git clone https://github.com/yuhanccc/TimeSeriesForecast.git
 cd factor-model-training-system
 pip install -r requirements.txt
+'''
+
