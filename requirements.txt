@@ -1,0 +1,7 @@
+tensorflow==2.6.0
+numpy==1.21.2
+pandas==1.3.3
+statsmodels==0.12.2
+tqdm==4.62.3
+akshare==1.0.0
+func-timeout==4.3.5
