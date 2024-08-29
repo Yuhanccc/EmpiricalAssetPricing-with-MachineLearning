@@ -1,4 +1,4 @@
-# Factor Model and Training System for Financial Data
+# Factor Model and Machine Learning Framework for Financial Data
 
 ## Overview
 This project implements a comprehensive system for loading financial data, calculating factors, and training models for financial analysis and prediction. It's designed to streamline the process of developing and testing factor models in quantitative finance, leveraging advanced machine learning techniques.
