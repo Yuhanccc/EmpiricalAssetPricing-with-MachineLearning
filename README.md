@@ -36,13 +36,15 @@ pip install -r requirements.txt
 
 ## Usage
 Two files are created for a sample usage
-- Sample_of_Train_Model : this sample file illustrate fields including: data downloading, factor calculation, model train, model iteration
-- Sample_of_Construct_Portfolios: this sample file illustrate how to construct more sophisticated portfolios with given prediction results of the model. Pre-defined portfolios including:
+- `Sample_of_Train_Model` : this sample file illustrate fields including: data downloading, factor calculation, model train, model iteration
+- `Sample_of_Construct_Portfolios`: this sample file illustrate how to construct more sophisticated portfolios with given prediction results of the model. Pre-defined portfolios including:
   - Markowitz Portfolio : Simple Mean Variance Optimization with return predicted by earlier trained model and historical volatility
   - Markowitz Portfolio with Shrinkage: same as above except using shrinkage method on the covaraince matrix, reduce covariance matrix to diagonal matrix
   - Volatility Timing Portfolio: proposed by Chris Kirby and Barbara Ostdiek, portfolio weights are inversely proportional to realized volatility
   - Risk To Reward Timing Portfolio: portfolio weight is inversely proportional to the ( predicted return / realized volatility ratio )
   - Long Short Portfolio: long top k stocks with highest predicted return and short top k stocks with lowest predicted return, along with long only and short only options
+
+## Sample Results
 
 ## Contributing
 Contributions to improve the system are welcome. Please feel free to submit a Pull Request.
