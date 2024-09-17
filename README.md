@@ -74,7 +74,7 @@ To verify the power of the model's prediction result, I run several simulated po
 #### Some Highlights About Volatiltiy Timing
 ![pic3](https://github.com/user-attachments/assets/7e8b77c2-dc16-4f25-b40f-3e1ee66d4750)
 As i noticed the enormous negative impact on portfolio's performance in Jan, 2024, I separated the simulation from Feb 1, 2024, and found prominent performance of Volatility Timing Strategy within 20 stocks with predicted highest return
-- The portfolio achieved a return of about 6.2% between Feb 1 and July 30, 2024
+- The portfolio achieved a return of about 6.2% between Feb 1 and July 30, 2024, Sharpe Ratio of 1.09
 - The return of CSI300 is about 4% at the same time range
 - A little bit excess earnings, thrilling
 
