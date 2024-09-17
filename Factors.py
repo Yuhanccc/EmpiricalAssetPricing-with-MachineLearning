@@ -112,16 +112,6 @@ class FactorFunc:
 
         return stock_data
 
-    @staticmethod
-    def volume(stock_data: pd.DataFrame, base_col: str, target_col: str,
-               window: int = 5) -> pd.DataFrame:
-        if not isinstance(window, int) or window < 2:
-            raise ValueError("Window must be an integer greater than or equal to 2.")
-        stock_data[target_col] = stock_data[base_col].rolling(window=window).mean() / 100000000
-
-        return stock_data
-
-
 class FactorCalculator:
     def __init__(self, StockDict: Dict[str, pd.DataFrame]):
         self.StockDict = StockDict
