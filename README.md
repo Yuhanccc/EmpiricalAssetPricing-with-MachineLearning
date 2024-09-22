@@ -24,16 +24,6 @@ The project consists of the following main components:
 - Comprehensive model training pipeline
 - Easy model selection and hyperparameter tuning
 
-## Installation
-To use this system, clone the repository and install the required dependencies:
-
-```bash
-git clone https://github.com/yuhanccc/TimeSeriesForecast.git
-cd factor-model-training-system
-pip install -r requirements.txt
-``` 
-
-
 ## Usage
 Two files are created for a sample usage
 - `Sample_of_Train_Model` : this sample file illustrate fields including: data downloading, factor calculation, model train, model iteration
