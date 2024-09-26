@@ -1,8 +1,7 @@
 # Qlib COPYCAT
 ## A Share Market's Emprical Asset Pricing with Deep Learning Methods
 
-## Overview
-This project implements a comprehensive system for loading financial data, calculating factors, and training models for financial analysis and prediction. It's designed to streamline the process of developing and testing factor models in quantitative finance, leveraging advanced machine learning techniques.
+This project builds a comprehensive system for loading financial data, calculating factors, and training models for financial analysis and prediction. It's designed to streamline the process of developing and testing factor models in quantitative finance, leveraging advanced machine learning techniques.
 
 ## Usage
 Two files are created for a sample usage
