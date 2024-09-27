@@ -47,7 +47,8 @@ The `Portfolios` module creates and backtests predefined portfolios using the pr
 - **Return-to-Risk Timing**: A strategy that assigns weights proportional to the return-to-risk ratio of the stocks.
 
 ## Typical Workflow
-![Uploading FlowChart.png…]()
+![FlowChart](https://github.com/user-attachments/assets/53fb9fa1-e934-4dd6-9a6d-c2782733de53)
+
 
 
 ## Sample File
