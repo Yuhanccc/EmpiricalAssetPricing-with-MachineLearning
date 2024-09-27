@@ -1,19 +1,66 @@
 # Qlib COPYCAT
 ## A Share Market's Emprical Asset Pricing with Deep Learning Methods
 
-This project builds a comprehensive system for loading financial data, calculating factors, and training models for financial analysis and prediction. It's designed to streamline the process of developing and testing factor models in quantitative finance, leveraging advanced machine learning techniques.
+This repository contains a comprehensive Machine Learning Based Investment Framework designed to facilitate the downloading, processing, and analysis of financial data, as well as the training and evaluation of machine learning models for investment strategies. The framework is organized into five main modules:
 
-## Usage
-Two files are created for a sample usage
-- `Sample_of_Train_Model` : this sample file illustrate fields including: data downloading, factor calculation, model train, model iteration
-- `Sample_of_Construct_Portfolios`: this sample file illustrate how to construct more sophisticated portfolios with given prediction results of the model. Pre-defined portfolios including:
-  - Markowitz Portfolio : Simple Mean Variance Optimization with return predicted by earlier trained model and historical volatility
-  - Markowitz Portfolio with Shrinkage: same as above except using shrinkage method on the covaraince matrix, reduce covariance matrix to diagonal matrix
-  - Volatility Timing Portfolio: proposed by Chris Kirby and Barbara Ostdiek, portfolio weights are inversely proportional to realized volatility
-  - Risk To Reward Timing Portfolio: portfolio weight is inversely proportional to the ( predicted return / realized volatility ratio )
-  - Long Short Portfolio: long top k stocks with highest predicted return and short top k stocks with lowest predicted return, along with long only and short only options
+1. **DataLoader**: Downloads and merges different price data, including spot prices, adjusted prices, and index prices using the `akshare` library. Returns a dictionary of DataFrames.
+2. **Factors**: Contains predefined factor functions and a calculator to apply these factors to stock data. Returns a concatenated DataFrame of factor values.
+3. **DefaultModels**: Provides default neural network models, including LSTM, GRU, and RNN, to be used in the ModelTraining module.
+4. **ModelTraining**: Trains a base model and uses it to generate predictions iteratively. Returns a dictionary containing predicted returns, true returns, and other information in an `iter_record`.
+5. **Portfolios**: Creates and backtests predefined portfolios using predicted returns from ModelTraining. The predefined portfolios include long-short, Markowitz optimized, volatility timing, and return-to-risk timing strategies.
 
-## Sample Results
+# Modules Overview
+
+### DataLoader
+
+The `DataLoader` class is responsible for downloading and merging different types of price data. It supports loading spot prices, adjusted prices, and index prices. The data is fetched using the `akshare` library and stored in a dictionary of DataFrames.
+
+### Factors
+
+The `Factors` module contains two classes:
+
+- **FactorFunc**: Stores predefined factor functions such as returns, volatility, idiosyncratic volatility, and volume.
+- **FactorCalculator**: Applies factor functions to each stock DataFrame in the provided dictionary and returns a concatenated DataFrame of factor values.
+
+### DefaultModels
+
+The `DefaultModels` module provides default neural network models, including:
+
+- A default neural network (NN)
+- Long Short-Term Memory (LSTM) network
+- Gated Recurrent Unit (GRU) network
+- Simple Recurrent Neural Network (RNN)
+
+These models are used in the ModelTraining module for training and prediction.
+
+### ModelTraining
+
+The `ModelTraining` module trains a base model using the provided data and generates predictions iteratively. It returns a dictionary containing predicted returns, true returns, and other relevant information in an `iter_record`.
+
+### Portfolios
+
+The `Portfolios` module creates and backtests predefined portfolios using the predicted returns from the ModelTraining module. The predefined portfolios include:
+
+- **Long-Short**: A strategy that takes long positions in the top-performing stocks and short positions in the bottom-performing stocks.
+- **Markowitz Optimized**: A portfolio optimized using Markowitz mean-variance optimization.
+- **Volatility Timing**: A strategy that assigns weights inversely proportional to the squared volatility of the stocks.
+- **Return-to-Risk Timing**: A strategy that assigns weights proportional to the return-to-risk ratio of the stocks.
+
+## Typical Workflow
+[FlowChart.pdf](https://github.com/user-attachments/files/17157913/FlowChart.pdf)
+
+## Sample File
+- **Data Download - -  Train Deep Learning Model**: `Samplecode_ModelTraining.ipynb`
+- **Portfolio Construction and BackTest**: `Samplecode_BackTest.ipynb`
+
+### Sample Model Training Result (Simple Neural Network Model)
+Below is a sample result with model being trained with 40 basic factors (momentum, volatiltiy, liquidity, etc) to make prediction on stock return in future 5 days. The model is trained on data range from 2002 to 2023. Below are some basic results of the model:
+- **R2 Score**: Achieved about 6% R2 Score in train set and about 8% in validation set
+- **Validation Set**: randomly selected from 2002 to 2023 dataset, 5% of total data, about 500,000 records
+
+![ModelTrain_1](https://github.com/user-attachments/assets/34d6ed88-1e52-473b-b0e9-709c47932bf1)
+
+### Sample Back Test Results
 Below is a sample result with model being trained with 40 basic factors (momentum, volatiltiy, liquidity, etc) to make prediction on stock return in future 5 days. The model is then iterated over the Jan to July, 2024. Below are some basic results of the model:
 - Detailed result can be found in `Sample_of_Train_Model`
 - The model achieved a in-sample r2 score about 8%, and bout 6% in validation set, but poor r2 score in iteration ( between predicted return and actual return )
