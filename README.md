@@ -52,7 +52,7 @@ The `Portfolios` module creates and backtests predefined portfolios using the pr
 
 
 ## Sample File
-- **Data Download - -  Train Deep Learning Model**: `Samplecode_ModelTraining.ipynb`
+- **Data Download & Train Deep Learning Model**: `Samplecode_ModelTraining.ipynb`
 - **Portfolio Construction and BackTest**: `Samplecode_BackTest.ipynb`
 
 ### Sample Model Training Result (Simple Neural Network Model)
