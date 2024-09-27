@@ -1,4 +1,4 @@
-# Qlib COPYCAT
+# Qlib Copycat
 ## A Share Market's Emprical Asset Pricing with Deep Learning Methods
 
 This repository contains a comprehensive Machine Learning Based Investment Framework designed to facilitate the downloading, processing, and analysis of financial data, as well as the training and evaluation of machine learning models for investment strategies. The framework is organized into five main modules:
